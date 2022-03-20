@@ -1,12 +1,11 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
+Dieses Projekt wurde im Rahmen einer Facharbeit geschaffen und 
+thematisiert die Lösung von Sudoku Logikrätseln mithilfe eines 
+Backtracking-Algorithmus und die Erstellung von ungelösten Sudoku-Brettern. 
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
+PROJECT TITLE: Sudoku
+PURPOSE OF PROJECT: Die Lösung und Erstellung von Sudokus
+VERSION or DATE: fertiggestellt am 14.03.2022
+AUTHORS: Jarno
 USER INSTRUCTIONS:
