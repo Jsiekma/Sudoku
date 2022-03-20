@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=sudoku
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ sudoku\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=sudoku()
+comment10.params=arr
+comment10.target=void\ ausgeben(int[][])
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment3.params=sudoku
+comment3.target=void\ loese(int[][])
+comment3.text=\r\n\ l\u00F6st\ ein\ ungel\u00F6stes\ Sudokubrett\ und\ gibt\ alle\ m\u00F6glichen\ L\u00F6sungen\ in\ der\ Konsole\ aus\r\n\r\n\ @param\ \ sudoku\ \ |\ das\ zu\ l\u00F6sende\ Sudokubrett\ als\ int\ Array\r\n
+comment4.params=sudoku\ zahl\ reihe\ spalte
+comment4.target=boolean\ isGueltig(int[][],\ int,\ int,\ int)
+comment4.text=\r\n\ Pr\u00FCft\ ob\ es\ regelkonform\ bzw.\ legal\ w\u00E4re,\ eine\ bestimmte\ Zahl\ in\ ein\ bestimmtes\ Feld\ zu\ setzen\r\n\r\n\ @param\ \ sudoku\ \ |\ das\ Sudokubrett\ als\ Array,\ auf\ dem\ der\ Zug\ \u00FCberpr\u00FCft\ werden\ soll\r\n\ @param\ \ zahl\ \ \ \ |\ die\ Zahl\ (von\ 1-9),\ welche\ eingef\u00FCgt\ werden\ soll\r\n\ @param\ \ reihe\ \ \ |\ Reihe\ und\ Spalte\ der\ zu\ \u00FCberpr\u00FCfenden\ Stelle\r\n\ @param\ \ spalte\r\n\ @return\ \ \ \ Ist\ es\ regelkonform,\ die\ Zahl\ (zahl)\ an\ einer\ beliebigen\ Stelle\ im\ Sudokubrett\ einzuf\u00FCgen\ ?\ \r\n
+comment5.params=
+comment5.target=int[][]\ testarr()
+comment6.params=arr
+comment6.target=boolean\ isValid(int[][])
+comment7.params=feldgr\u00F6\u00DFe\ hinweise
+comment7.target=int[][]\ erstelle(int,\ int)
+comment8.params=arr
+comment8.target=int\ getZahlAnzahl(int[][])
+comment9.params=
+comment9.target=int[][]\ sudokuLesen()
+comment9.text=\r\n\ liest\ ein\ Sudokubrett\ aus\ einem\ Textdokument\ ein\ und\ gibt\ es\ als\ Array\ aus\r\n\r\n\ @return\ \ \ \ Das\ eingelesene\ Sudokubrett\ als\ Array\r\n
+numComments=11
