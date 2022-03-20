@@ -99,38 +99,38 @@ public class sudoku {
     }
 
     public static int[][] erstelle(int feldgröße, int hinweise, int anzahlLösungen) {
-        int[][] sudoku = new int[feldgröße][feldgröße];
-        while (n != anzahlLösungen) {
-            n = 0;
-            sudoku = erstellehilfe(feldgröße, hinweise);
-            rekZählen(sudoku);
+        int[][] sudoku = new int[feldgröße][feldgröße]; // ein leeres Sudoku-Brett einer beliebigen Feldgröße wird initialisiert
+        while (n != anzahlLösungen) {   // Solange nicht genau die geforderte Menge an Lösungen gegeben sind
+            n = 0;  // setze den Zähler auf 0
+            sudoku = erstellehilfe(feldgröße, hinweise);    // erstelle ein neues Sudoku mit einer beliebigen Anzahl an Hinweisen
+            rekZählen(sudoku);  // zähle die Lösungen
         }
-        return sudoku;
+        return sudoku;  // gebe das Sudoku-Brett zurück
     }
 
     private static int[][] erstellehilfe(int feldgröße, int hinweise) {
-        int[][] sudokuBrett = new int[feldgröße][feldgröße];
+        int[][] sudokuBrett = new int[feldgröße][feldgröße];    // ein leeres Sudoku-Brett einer beliebigen Feldgröße wird initialisiert
         Random r = new Random();
 
         for (int i = 0; i < feldgröße; i++) {
             for (int j = 0; j < feldgröße; j++) {
-                int zufallszahl = r.nextInt(feldgröße) + 1;
-                if (isGueltig(sudokuBrett, zufallszahl, i, j)) {
-                    sudokuBrett[i][j] = zufallszahl;
+                int zufallszahl = r.nextInt(feldgröße) + 1; // eine zufällige Zahl wird "ausgewürfelt"
+                if (isGueltig(sudokuBrett, zufallszahl, i, j)) {    // Wenn der Zug möglich ist...
+                    sudokuBrett[i][j] = zufallszahl;    // setze die Zufallszahl in das jeweilige Feld ein
                 }
             }
         }
-        for (int i = getHinweisAnzahl(sudokuBrett); hinweise < i; i--) {
-            int y = r.nextInt(feldgröße);
-            int x = r.nextInt(feldgröße);
+        for (int i = getHinweisAnzahl(sudokuBrett); hinweise < i; i--) {    // solange die Anzahl der Hinweise auf dem Sudoku-Brett kleiner als die geforderte Anzahl ist...
+            int y = r.nextInt(feldgröße);   // zufällige y-Koordinate
+            int x = r.nextInt(feldgröße);   // zufällige x-Koordinate
 
-            if (sudokuBrett[y][x] != 0) {
-                sudokuBrett[y][x] = 0;
+            if (sudokuBrett[y][x] != 0) {   // wenn das zufällige Feld keine 0 ist...
+                sudokuBrett[y][x] = 0;  // setze das Feld auf 0
             } else {
-                i++;
+                i++;    // Sonst wiederhole den Schritt mit einem anderen zufälligem Feld
             }
         }
-        return sudokuBrett;
+        return sudokuBrett; // gebe das Sudoku-Bett zurück
     }
 
     /**
