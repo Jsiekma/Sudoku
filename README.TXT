@@ -8,4 +8,3 @@ PROJECT TITLE: Sudoku
 PURPOSE OF PROJECT: Die Lösung und Erstellung von Sudokus
 VERSION or DATE: fertiggestellt am 14.03.2022
 AUTHORS: Jarno
-USER INSTRUCTIONS:
