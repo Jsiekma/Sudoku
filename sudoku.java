@@ -3,12 +3,6 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.util.Random;
 
-/**
- * Write a description of class sudoku here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class sudoku {
     public static int n;
     public static int backtracks;
