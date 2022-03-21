@@ -21,20 +21,20 @@ public class sudoku {
     }
 
     public static void main(String[] args) throws IOException {
-        test();
-        // long starterstelle = System.nanoTime();
-        // int[][]test = erstelle(9, 27, 1);
-        // long elapsedTimeerstelle = System.nanoTime() - starterstelle;
-        // System.out.println("Zeit für erstellen: "+elapsedTimeerstelle);
-        // long start = System.nanoTime();
-        // loese(test);
-        // long elapsedTime = System.nanoTime() - start;
-        // System.out.println("Backtracks: " + backtracks);
-        // System.out.println("Hinweise: "+getHinweisAnzahl(test));
-        // System.out.print("Zeit " + elapsedTime);
+        // test();
+        long start = System.nanoTime();
+        int[][]test = erstelle(9, 27, 1);
+        long Ende = System.nanoTime() - start;
+        System.out.println("Zeit für erstellen: "+Ende);
+        start = System.nanoTime();
+        loese(test);
+        Ende = System.nanoTime() - start;
+        System.out.println("Backtracks: " + backtracks);
+        System.out.println("Hinweise: "+getHinweisAnzahl(test));
+        System.out.print("Zeit " + Ende);
     }
 
-    public static int[][] loese(int sudoku[][]) {
+    public static void loese(int sudoku[][]) {
         int feldgröße = sudoku.length;
         for (int y = 0; y < feldgröße; y++) // Die Zeilen werden durchlaufen
         {
@@ -56,7 +56,7 @@ public class sudoku {
                             // nun werden alle restlichen Zahlen der For-Schleife ausprobiert
                         }
                     }
-                    return null; // Wenn keine der 9 Zahlen gepasst hat, breche die Methode ab
+                    return; // Wenn keine der 9 Zahlen gepasst hat, breche die Methode ab
                 }
             }
         }
@@ -64,7 +64,6 @@ public class sudoku {
         // Ausgabe der Lösung oder ggf. Lösungen
         System.out.println("Eine Lösung:");
         ausgeben(sudoku);
-        return (sudoku);
     }
 
 
@@ -338,7 +337,7 @@ public class sudoku {
      * @return Das eingelesene Sudokubrett als Array
      */
     public static int[][] sudokuLesen() throws IOException {
-        File file = new File("New Text Document.txt");
+        File file = new File("sudokuEinlesen.txt");
         Scanner txt = new Scanner(file);
         int[][] s = new int[9][9];
 
@@ -355,18 +354,14 @@ public class sudoku {
         txt.close();
 
         anzahlGefundeneLoesungen = 0;
-        if (loese(s) != null) {
-            System.out.println("Anzahl der möglichen Lösungen: " + anzahlGefundeneLoesungen);
-            System.out.println("Anzahl der Hinweise: " + getHinweisAnzahl(s));
+        System.out.println("Anzahl der möglichen Lösungen: " + anzahlGefundeneLoesungen);
+        System.out.println("Anzahl der Hinweise: " + getHinweisAnzahl(s));
 
-            System.out.println("Eingelesenes Sudoku Feld:");
-            ausgeben(s);
 
-            return s;
-        } else {
-            System.out.print("Das Sudoku ist nicht lösbar!");
-            return null;
-        }
+        System.out.println("Eingelesenes Sudoku Feld:");
+        ausgeben(s);
+
+        return s;
     }
 
     // gibt ein Array bzw. das Sudokubrett in einer übersichtlichen Matrix wieder
