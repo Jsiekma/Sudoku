@@ -33,7 +33,13 @@ public class sudoku {
         System.out.println("Hinweise: "+getHinweisAnzahl(test));
         System.out.print("Zeit " + Ende);
     }
-
+    
+    /**
+     * Löst ein Sudoku mit beliebiger Feldlänge
+     *
+     * @param sudoku | das Sudokubrett als Array, dass gelöst werden soll
+     * @return void | das gelöste Sudoku-Brett wird in der Konsole ausgegeben
+     */
     public static void loese(int sudoku[][]) {
         int feldgröße = sudoku.length;
         for (int y = 0; y < feldgröße; y++) // Die Zeilen werden durchlaufen
@@ -96,7 +102,16 @@ public class sudoku {
 
         n++;
     }
-
+    
+    /**
+     * Erstellt ein ungelöstes Sudoku-Brett mit einer beliebigen Anzahl von Hinweisen und Lösungen und einer beliebigen Feldgröße. 
+     *
+     * @param feldgröße | die Feldgröße, die das Sudoku haben soll
+     * @param hinweise   | die Anzahl an Hinweisen, die gegeben sein sollen
+     * @param anzahlLösungen  | die Anzahl an Lösungen, die vorhanden sein sollen
+     * 
+     * @return Das erstellte Sudoku-Brett als zweidimensionaler Array
+     */
     public static int[][] erstelle(int feldgröße, int hinweise, int anzahlLösungen) {
         int[][] sudoku = new int[feldgröße][feldgröße]; // ein leeres Sudoku-Brett einer beliebigen Feldgröße wird initialisiert
         while (n != anzahlLösungen) {   // Solange nicht genau die geforderte Menge an Lösungen gegeben sind
