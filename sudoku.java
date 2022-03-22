@@ -107,6 +107,7 @@ public class sudoku {
      * @return Das erstellte Sudoku-Brett als zweidimensionaler Array
      */
     public static int[][] erstelle(int feldgröße, int hinweise, int anzahlLösungen) {
+        n = 0;
         int[][] sudoku = new int[feldgröße][feldgröße]; // ein leeres Sudoku-Brett einer beliebigen Feldgröße wird initialisiert
         while (n != anzahlLösungen) {   // Solange nicht genau die geforderte Menge an Lösungen gegeben sind
             n = 0;  // setze den Zähler auf 0
