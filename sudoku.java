@@ -4,14 +4,12 @@ import java.io.IOException;
 import java.util.Random;
 
 public class sudoku {
-    public static int n;
+    public static int anzahlGefundenerLoesungen;
     public static int backtracks;
-    public static int anzahlGefundeneLoesungen;
 
     public sudoku() {
-        n = 0;
+        anzahlGefundenerLoesungen = 0;
         backtracks = 0;
-        anzahlGefundeneLoesungen = 0;
     }
 
     public static void main(String[] args) throws IOException {
@@ -60,7 +58,7 @@ public class sudoku {
                 }
             }
         }
-
+        anzahlGefundenerLoesungen++;
         // Ausgabe der Lösung oder ggf. Lösungen
         System.out.println("Eine Lösung:");
         ausgeben(sudoku);
@@ -94,7 +92,7 @@ public class sudoku {
             }
         }
 
-        n++;
+        anzahlGefundenerLoesungen++;
     }
     
     /**
@@ -107,11 +105,11 @@ public class sudoku {
      * @return Das erstellte Sudoku-Brett als zweidimensionaler Array
      */
     public static int[][] erstelle(int feldgröße, int hinweise, int anzahlLösungen) {
-        n = 0;
+        anzahlGefundenerLoesungen = 0;
         int[][] sudoku = new int[feldgröße][feldgröße]; // ein leeres Sudoku-Brett einer beliebigen Feldgröße wird initialisiert
-        while (n != anzahlLösungen) {   // Solange nicht genau die geforderte Menge an Lösungen gegeben sind
-            n = 0;  // setze den Zähler auf 0
-            sudoku = erstellehilfe(feldgröße, hinweise);    // erstelle ein neues Sudoku mit einer beliebigen Anzahl an Hinweisen
+        while (anzahlGefundenerLoesungen != anzahlLösungen) {   // Solange nicht genau die geforderte Menge an Lösungen gegeben sind
+            anzahlGefundenerLoesungen = 0;  // setze den Zähler auf 0
+            sudoku = erstellehilfe(feldgröße, hinweise);    // erstelle ein neues Sudoku mit der gegebenen Anzahl an Hinweisen
             rekZählen(sudoku);  // zähle die Lösungen
         }
         return sudoku;  // gebe das Sudoku-Brett zurück
@@ -363,8 +361,9 @@ public class sudoku {
         }
         txt.close();
 
-        anzahlGefundeneLoesungen = 0;
-        System.out.println("Anzahl der möglichen Lösungen: " + anzahlGefundeneLoesungen);
+        anzahlGefundenerLoesungen = 0;
+        rekZählen(s);
+        System.out.println("Anzahl der möglichen Lösungen: " + anzahlGefundenerLoesungen);
         System.out.println("Anzahl der Hinweise: " + getHinweisAnzahl(s));
 
 
